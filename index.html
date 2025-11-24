@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Календарь</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/components/header.css">
+    <link rel="stylesheet" href="styles/components/filters.css">
+    <link rel="stylesheet" href="styles/components/month-view.css">
+    <link rel="stylesheet" href="styles/components/week-view.css">
+</head>
+<body>
+    <div class="calendar-widget">
+        <!-- Верхняя панель управления -->
+        <div class="calendar-header">
+            <div class="navigation-controls">
+                <button class="nav-button prev-button">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M10 12L6 8L10 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+                <button class="today-button">Сегодня</button>
+                <button class="nav-button next-button">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M6 4L10 8L6 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+            </div>
+            
+            <select class="project-select">
+                <option>Проект</option>
+            </select>
+            
+            <div class="period-display">Ноябрь 2024</div>
+            
+            <div class="view-controls">
+                <button class="view-button" data-view="day">День</button>
+                <button class="view-button active" data-view="week">Неделя</button>
+                <button class="view-button" data-view="month">Месяц</button>
+            </div>
+        </div>
+
+        <!-- Панель фильтров -->
+        <div class="filters-panel">
+            <select class="filter-select" id="subsystemSelect">
+                <option>Подсистема</option>
+            </select>
+            <select class="filter-select" id="executorSelect">
+                <option>Исполнитель</option>
+            </select>
+            <select class="filter-select" id="typeSelect">
+                <option>Тип</option>
+            </select>
+            <select class="filter-select" id="prioritySelect">
+                <option>Приоритет</option>
+            </select>
+            <select class="filter-select" id="statusSelect">
+                <option>Состояние</option>
+            </select>
+            <select class="filter-select" id="deadlineSelect">
+                <option>Срок</option>
+            </select>
+            <select class="filter-select" id="timeSpentSelect">
+                <option>Затраченное время</option>
+            </select>
+        </div>
+
+        <!-- Контейнер для видов календаря -->
+        <div class="calendar-views">
+            <div class="view-container" id="monthView" style="display: none;">
+                <div class="calendar-grid">
+                    <div class="weekdays-header">
+                        <div class="weekday">ПН</div>
+                        <div class="weekday">ВТ</div>
+                        <div class="weekday">СР</div>
+                        <div class="weekday">ЧТ</div>
+                        <div class="weekday">ПТ</div>
+                        <div class="weekday">СБ</div>
+                        <div class="weekday">ВС</div>
+                    </div>
+                    <div class="days-grid" id="daysGrid"></div>
+                </div>
+            </div>
+            
+            <div class="view-container" id="weekView">
+                <div class="week-grid" id="weekGrid"></div>
+            </div>
+            
+            <div class="view-container" id="dayView" style="display: none;">
+                <div class="day-view">Дневной вид (в разработке)</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="data/mockData.js"></script>
+    <script src="js/components/Calendar.js"></script>
+    <script src="js/components/MonthView.js"></script>
+    <script src="js/components/WeekView.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

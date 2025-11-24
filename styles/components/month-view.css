@@ -1,0 +1,80 @@
+.calendar-grid {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.weekdays-header {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px; /* Увеличиваем gap для лучшей видимости */
+    margin-bottom: 10px;
+}
+
+.weekday {
+    text-align: center;
+    padding: 15px 0;
+    font-weight: 600;
+    color: #666;
+    font-size: 14px;
+    background: #f8f9fa;
+    border-radius: 6px;
+}
+
+.days-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    gap: 2px; /* Увеличиваем gap между ячейками */
+    flex: 1;
+    background: #d0d0d0; /* Более темный фон для лучшей видимости сетки */
+    border: 2px solid #d0d0d0; /* Более толстая граница */
+    border-radius: 8px;
+    padding: 2px; /* Добавляем padding для видимости фона */
+}
+
+.day-cell {
+    background: white;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border-radius: 4px; /* Закругляем углы ячеек */
+    min-height: 120px;
+}
+
+.day-number {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.day-cell.other-month .day-number {
+    color: #ccc;
+}
+
+.day-cell.today .day-number {
+    background: #007bff;
+    color: white;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.day-events {
+    flex: 1;
+    overflow-y: auto;
+}
+
+.event {
+    background: #e3f2fd;
+    padding: 2px 6px;
+    margin-bottom: 2px;
+    border-radius: 3px;
+    font-size: 12px;
+    border-left: 3px solid #2196f3;
+}
